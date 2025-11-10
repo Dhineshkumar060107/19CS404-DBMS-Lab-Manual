@@ -21,27 +21,31 @@ A subquery is a query inside another SQL query and is embedded in:
 
 *Example:*
 sql
+```
 SELECT * FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);
-
+```
 ### Views
 A view is a virtual table based on the result of an SQL SELECT query.
 *Create View:*
 sql
+```
 CREATE VIEW view_name AS
 SELECT column1, column2 FROM table_name WHERE condition;
-
+```
 *Drop View:*
 sql
+```
 DROP VIEW view_name;
 
-
+```
 *Question 1*
 --
 <img width="1245" height="518" alt="image" src="https://github.com/user-attachments/assets/1ee74061-96d5-44f2-8c7c-a71c103b0105" />
 
 
 sql
+```
 SELECT grade, COUNT(*)
 FROM customer
 WHERE grade > (
@@ -51,7 +55,7 @@ WHERE grade > (
 )
 GROUP BY grade;
 
-
+```
 
 *Output:*
 
@@ -64,6 +68,8 @@ GROUP BY grade;
 
 
 sql
+
+```
 SELECT *
 FROM customer
 WHERE customer_id = (
@@ -71,7 +77,7 @@ WHERE customer_id = (
     FROM salesman
     WHERE name = 'Mc Lyon'
 );
-
+```
 
 
 *Output:*
@@ -86,12 +92,13 @@ WHERE customer_id = (
 
 
 sql
+```
 SELECT *
 FROM CUSTOMERS
 WHERE ADDRESS = 'Delhi';
 
 
-
+```
 *Output:*
 
 <img width="1144" height="367" alt="image" src="https://github.com/user-attachments/assets/e1b96268-1877-4e23-b27c-36e1c8534b08" />
@@ -103,6 +110,7 @@ WHERE ADDRESS = 'Delhi';
 
 
 sql
+```
 SELECT student_name, grade
 FROM GRADES g
 WHERE grade = (
@@ -110,7 +118,7 @@ WHERE grade = (
     FROM GRADES
     WHERE subject = g.subject
 );
-
+```
 
 
 *Output:*
@@ -124,6 +132,7 @@ WHERE grade = (
 
 
 sql
+```
 SELECT name, city
 FROM customer
 WHERE city IN (
@@ -133,7 +142,7 @@ WHERE city IN (
 );
 
 
-
+```
 *Output:*
 
 <img width="527" height="482" alt="image" src="https://github.com/user-attachments/assets/1444ab14-7c04-42fd-9011-f920dfb16a8e" />
@@ -145,6 +154,7 @@ WHERE city IN (
 
 
 sql
+```
 SELECT name
 FROM customer
 WHERE phone IN (
@@ -154,7 +164,7 @@ WHERE phone IN (
     HAVING COUNT(*) = 1
 );
 
-
+```
 
 *Output:*
 
@@ -167,6 +177,8 @@ WHERE phone IN (
 
 
 sql
+
+```
 SELECT *
 FROM GRADES g
 WHERE grade = (
@@ -175,7 +187,7 @@ WHERE grade = (
     WHERE subject = g.subject
 );
 
-
+```
 
 *Output:*
 
@@ -188,6 +200,7 @@ WHERE grade = (
 
 
 sql
+```
 SELECT *
 FROM customer
 WHERE city <> (
@@ -200,7 +213,7 @@ WHERE city <> (
 );
 
 
-
+```
 *Output:*
 
 <img width="1301" height="500" alt="image" src="https://github.com/user-attachments/assets/af17531a-b1dd-41f7-9ca6-89b85ada0ace" />
@@ -212,10 +225,11 @@ WHERE city <> (
 
 
 sql
+```
 SELECT *
 FROM CUSTOMERS
 WHERE AGE < 30;
-
+```
 
 
 *Output:*
@@ -229,6 +243,7 @@ WHERE AGE < 30;
 
 
 sql
+```
 SELECT medication_id, medication_name, dosage
 FROM Medications
 WHERE dosage = (
@@ -236,7 +251,7 @@ WHERE dosage = (
     FROM Medications
 );
 
-
+```
 
 *Output:*
 
