@@ -11,51 +11,65 @@ These are three type of INSERT INTO queries which are as
 A)Inserting a single record
 *Syntax (Single Row):*
 sql
+```
 INSERT INTO table_name (field_1, field_2, ...) VALUES (value_1, value_2, ...);
+```
 
 *Syntax (Multiple Rows):*
 sql
+```
 INSERT INTO table_name (field_1, field_2, ...) VALUES
 (value_1, value_2, ...),
 (value_3, value_4, ...);
-
+```
 *Syntax (Insert from another table):*
 sql
+
+```
 INSERT INTO table_name SELECT * FROM other_table WHERE condition;
+```
 
 ### 2. UPDATE
 Used to modify records in a relation.
 Syntax:
 sql
+```
 UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
-
+```
 ### 3. DELETE
 Used to delete records from a relation.
 *Syntax (All rows):*
 sql
-DELETE FROM table_name;
 
+```
+DELETE FROM table_name;
+```
 *Syntax (Specific condition):*
 sql
+```
 DELETE FROM table_name WHERE condition;
-
+```
 ### 4. SELECT
 Used to retrieve records from a table.
 *Syntax:*
 sql
+```
 SELECT column1, column2 FROM table_name WHERE condition;
-
+```
 *Question 1*
 --
 <img width="724" height="406" alt="image" src="https://github.com/user-attachments/assets/dec7e1db-74e9-4d95-98bd-2c06b75d34e7" />
 
 
+
 sql
+```
+
 UPDATE products
 SET reorder_lvl = 40
 WHERE category = 'Grocery';
 
-
+```
 *Output:*
 
 <img width="1302" height="242" alt="image" src="https://github.com/user-attachments/assets/24ec3f9e-b407-4828-9c63-f587df97b03a" />
@@ -67,12 +81,14 @@ WHERE category = 'Grocery';
 
 
 sql
+
+```
 UPDATE sales
 SET sell_price = sell_price * 1.05
 WHERE product_id = 15
   AND sale_date = '2023-01-31';
 
-
+```
 *Output:*
 
 <img width="974" height="253" alt="image" src="https://github.com/user-attachments/assets/924fdbac-d6c4-4b79-bd4b-f95faa1364d1" />
@@ -84,11 +100,13 @@ WHERE product_id = 15
 
 
 sql
+
+```
 SELECT order_no, order_date, purch_amt
 FROM orders
 WHERE salesman_id = 5001;
 
-
+```
 *Output:*
 
 <img width="407" height="253" alt="image" src="https://github.com/user-attachments/assets/06ce1966-fa6c-4586-b6a6-d33a849335dd" />
@@ -100,11 +118,12 @@ WHERE salesman_id = 5001;
 
 
 sql
+```
 UPDATE products
 SET availability = availability * 2
 WHERE product_id = 1;
 
-
+```
 *Output:*
 
 <img width="676" height="154" alt="image" src="https://github.com/user-attachments/assets/927f9f8c-717c-41fd-a60e-cffcdb6c806e" />
@@ -116,11 +135,12 @@ WHERE product_id = 1;
 
 
 sql
+```
 UPDATE PRODUCTS
 SET sell_price = ROUND(sell_price * 1.10, 2)
 WHERE supplier_id = 6;
 
-
+```
 *Output:*
 
 <img width="1221" height="311" alt="image" src="https://github.com/user-attachments/assets/345fd60d-bdb5-4c83-a6b8-88461530b7f6" />
@@ -132,9 +152,11 @@ WHERE supplier_id = 6;
 
 
 sql
+
+```
 DELETE FROM Customer
 WHERE CUST_COUNTRY NOT IN ('India', 'USA');
-
+```
 
 *Output:*
 
@@ -147,10 +169,11 @@ WHERE CUST_COUNTRY NOT IN ('India', 'USA');
 
 
 sql
+```
 DELETE FROM Customer
 WHERE GRADE >= 2;
 
-
+```
 *Output:*
 
 <img width="400" height="357" alt="image" src="https://github.com/user-attachments/assets/4135c7af-daa9-411d-8e7c-848b223f91b2" />
@@ -162,10 +185,11 @@ WHERE GRADE >= 2;
 
 
 sql
+```
 DELETE FROM Customer
 WHERE LENGTH(CUST_NAME) = 6;
 
-
+```
 *Output:*
 
 <img width="1591" height="404" alt="image" src="https://github.com/user-attachments/assets/0fd11715-448c-49d0-b2e7-8db45b98f39c" />
@@ -177,9 +201,11 @@ WHERE LENGTH(CUST_NAME) = 6;
 
 
 sql
+
+```
 DELETE FROM Customer
 WHERE GRADE % 2 <> 0;
-
+```
 
 *Output:*
 
@@ -192,9 +218,10 @@ WHERE GRADE % 2 <> 0;
 
 
 sql
+```
 DELETE FROM Customer
 WHERE CUST_NAME LIKE '%Holmes%';
-
+```
 
 *Output:*
 
