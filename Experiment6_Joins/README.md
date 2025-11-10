@@ -12,11 +12,12 @@ Returns records with matching values in both tables.
 
 *Syntax:*
 sql
+```
 SELECT columns
 FROM table1
 INNER JOIN table2
 ON table1.column = table2.column;
-
+```
 
 ### 2. LEFT JOIN
 Returns all records from the left table, and matched records from the right.
@@ -24,40 +25,44 @@ Returns all records from the left table, and matched records from the right.
 *Syntax:*
 
 sql
+```
 SELECT columns
 FROM table1
 LEFT JOIN table2
 ON table1.column = table2.column;
-
+```
 ### 3. RIGHT JOIN
 Returns all records from the right table, and matched records from the left.
 
 *Syntax:*
 
 sql
+```
 SELECT columns
 FROM table1
 RIGHT JOIN table2
 ON table1.column = table2.column;
-
+```
 ### 4. FULL OUTER JOIN
 Returns all records when there is a match in either left or right table.
 
 *Syntax:*
 
 sql
+```
 SELECT columns
 FROM table1
 FULL OUTER JOIN table2
 ON table1.column = table2.column;
 
-
+```
 *Question 1*
 --
 <img width="1303" height="490" alt="image" src="https://github.com/user-attachments/assets/3347ee4e-ce42-4464-92ca-e7b2dd3897f3" />
 
 
 sql
+```
 SELECT 
     c.cust_name,
     o.ord_no,
@@ -72,7 +77,7 @@ ON
 WHERE 
     o.purch_amt > 1000;
 
-
+```
 
 *Output:*
 
@@ -86,6 +91,7 @@ WHERE
 
 
 sql
+```
 SELECT 
     p.first_name AS patient_name,
     t.*
@@ -98,7 +104,7 @@ ON
 WHERE 
     p.admission_date BETWEEN '2024-01-01' AND '2024-01-31';
 
-
+```
 
 *Output:*
 
@@ -111,6 +117,7 @@ WHERE
 
 
 sql
+```
 SELECT 
     o.ord_no,
     o.purch_amt,
@@ -125,7 +132,7 @@ ON
 WHERE 
     o.purch_amt BETWEEN 500 AND 2000;
 
-
+```
 
 *Output:*
 
@@ -138,6 +145,7 @@ WHERE
 
 
 sql
+```
 SELECT 
     o.ord_no,
     o.purch_amt,
@@ -155,7 +163,7 @@ INNER JOIN
 INNER JOIN 
     salesman AS s ON o.salesman_id = s.salesman_id;
 
-
+```
 
 *Output:*
 
@@ -168,6 +176,7 @@ INNER JOIN
 
 
 sql
+```
 SELECT 
     p.first_name AS patient_name,
     d.first_name AS doctor_name
@@ -181,7 +190,7 @@ WHERE
     p.discharge_date IS NULL;
 
 
-
+```
 *Output:*
 
 <img width="390" height="293" alt="image" src="https://github.com/user-attachments/assets/656158cd-8276-459c-a2e1-c0443a857bda" />
@@ -193,6 +202,8 @@ WHERE
 
 
 sql
+
+```
 SELECT 
     o.ord_no,
     o.ord_date,
@@ -208,7 +219,7 @@ JOIN
 JOIN 
     salesman s ON o.salesman_id = s.salesman_id;
 
-
+```
 
 *Output:*
 
@@ -221,6 +232,7 @@ JOIN
 
 
 sql
+```
 SELECT
     c.cust_name AS "Customer Name",
     c.city,
@@ -232,7 +244,7 @@ JOIN
     salesman s ON c.salesman_id = s.salesman_id;
 
 
-
+```
 *Output:*
 
 <img width="707" height="504" alt="image" src="https://github.com/user-attachments/assets/6b026e17-b8d9-4a94-a9db-52dbf31af8de" />
@@ -244,6 +256,7 @@ JOIN
 
 
 sql
+```
 SELECT p.*
 FROM patients p
 INNER JOIN test_results t ON p.patient_id = t.patient_id
@@ -251,7 +264,7 @@ WHERE t.test_name IN ('Blood Test', 'Blood Pressure')
   AND t.result NOT LIKE '%Normal%';
 
 
-
+```
 *Output:*
 
 <img width="1108" height="249" alt="image" src="https://github.com/user-attachments/assets/6481f54c-0610-48c8-81fa-253cc5a6b05d" />
@@ -263,6 +276,7 @@ WHERE t.test_name IN ('Blood Test', 'Blood Pressure')
 
 
 sql
+```
 SELECT 
     c.cust_name,
     c.city,
@@ -276,7 +290,7 @@ JOIN
 ORDER BY 
     c.customer_id ASC;
 
-
+```
 
 
 *Output:*
@@ -290,6 +304,7 @@ ORDER BY
 
 
 sql
+```
 SELECT 
     s.name, 
     c.cust_name, 
@@ -309,7 +324,7 @@ WHERE
     );
 
 
-
+```
 *Output:*
 
 <img width="842" height="360" alt="image" src="https://github.com/user-attachments/assets/6e3d950c-d1c5-427d-9f1e-1513820f3daa" />
