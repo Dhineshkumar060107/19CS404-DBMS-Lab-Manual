@@ -109,9 +109,10 @@ CREATE TABLE Table_Name (
 
 
 sql
+```
 ALTER TABLE Student_details ADD COLUMN State TEXT;
 
-
+```
 *Output:*
 
 
@@ -123,11 +124,16 @@ ALTER TABLE Student_details ADD COLUMN State TEXT;
 
 <img width="537" height="173" alt="Q2" src="https://github.com/user-attachments/assets/111ec911-a757-4175-be0f-8b773e3aa6f2" />
 
+
 sql
+
+```
+
 CREATE TABLE Departments(
 DepartmentID INTEGER,
 DepartmentName TEXT);
 
+```
 
 *Output:*
 
@@ -139,7 +145,11 @@ DepartmentName TEXT);
 <img width="881" height="386" alt="Q3" src="https://github.com/user-attachments/assets/cfe97115-372f-465e-8ca4-9e0b30debf9f" />
 
 
+
 sql
+
+```
+
 CREATE TABLE item(
 item_id TEXT PRIMARY KEY,
 item_desc TEXT NOT NULL,
@@ -148,6 +158,8 @@ icom_id TEXT(4),
 FOREIGN KEY (icom_id) REFERENCES company(com_id)
 ON UPDATE CASCADE
 ON DELETE CASCADE);
+
+```
 
 
 *Output:*
@@ -161,6 +173,9 @@ ON DELETE CASCADE);
 
 
 sql
+
+
+```
 CREATE TABLE products(
 product_id INTEGER PRIMARY KEY,
 product_name TEXT NOT NULL,
@@ -172,6 +187,8 @@ CHECK (list_price >= 0),
 CHECK (discount >=0 )
 );
 
+```
+
 
 *Output:*
 
@@ -182,8 +199,13 @@ CHECK (discount >=0 )
 <img width="1156" height="247" alt="Q5" src="https://github.com/user-attachments/assets/291fd5db-14cf-48cb-9ba4-084e099f7b2e" />
 
 
+
 sql
+
+```
 INSERT INTO Employee (EmployeeID,Name,Position,Department,Salary) VALUES(001,'Sarah Parker','Manager','HR',60000);
+```
+
 
 
 *Output:*
@@ -195,10 +217,13 @@ INSERT INTO Employee (EmployeeID,Name,Position,Department,Salary) VALUES(001,'Sa
 ---
 <img width="837" height="391" alt="Q6" src="https://github.com/user-attachments/assets/b3aa16b5-05ad-43f7-a939-135880128642" />
 
-
 sql
+
+```
+
 INSERT INTO Customers (CustomerID,Name,Address,City,ZipCode) VALUES(302,'Laura Croft','456 Elm St','Seattle','98101');
 INSERT INTO Customers (CustomerID,Name,Address,City,ZipCode) VALUES(303,'Bruce Wayne','789 Oak St','Gotham','10001');
+```
 
 
 *Output:*
@@ -212,6 +237,9 @@ INSERT INTO Customers (CustomerID,Name,Address,City,ZipCode) VALUES(303,'Bruce W
 <img width="981" height="455" alt="Q7" src="https://github.com/user-attachments/assets/dcc822a0-44e4-425a-b99b-5f386b1eb654" />
 
 sql
+
+```
+
 CREATE TABLE item(
 item_id TEXT PRIMARY KEY,
 item_desc TEXT NOT NULL,
@@ -221,6 +249,7 @@ FOREIGN KEY (icom_id) REFERENCES company(com_id)
 ON UPDATE SET NULL
 ON DELETE SET NULL);
 
+```
 
 *Output:*
 
@@ -232,7 +261,11 @@ ON DELETE SET NULL);
 <img width="1701" height="368" alt="Q8" src="https://github.com/user-attachments/assets/666b2f1e-c689-483a-bd8d-2da0235d392b" />
 
 
+
 sql
+
+```
+
 CREATE TABLE contacts(
 contact_id INTEGER PRIMARY KEY,
 first_name TEXT NOT NULL,
@@ -242,7 +275,7 @@ phone TEXT NOT NULL,
 CHECK(LENGTH(phone)>=10)
 );
 
-
+```
 *Output:*
 
 <img width="1612" height="238" alt="QA8" src="https://github.com/user-attachments/assets/867efbd2-b639-4fe9-94a4-53dd3c872b67" />
@@ -253,11 +286,14 @@ CHECK(LENGTH(phone)>=10)
 <img width="717" height="227" alt="Q9" src="https://github.com/user-attachments/assets/871c3c91-78ec-4729-9a84-0c916ade81fa" />
 
 
+
 sql
+
+```
 ALTER TABLE student_details
 ADD COLUMN Date_of_birth Date;
 
-
+```
 *Output:*
 
 <img width="1102" height="266" alt="QA9" src="https://github.com/user-attachments/assets/2de91c7e-03b9-4e32-85a4-3ada25bcea35" />
@@ -269,11 +305,13 @@ ADD COLUMN Date_of_birth Date;
 
 
 sql
+
+```
 INSERT INTO Student_details (RollNo,Name,Gender,Subject,Marks)
 SELECT RollNo,Name,Gender,Subject,Marks
 FROM Archived_students;
 
-
+```
 *Output:*
 
 <img width="995" height="227" alt="QA10" src="https://github.com/user-attachments/assets/97a4a076-df71-4d5b-91e3-a3f08126bbf3" />
